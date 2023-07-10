@@ -1,0 +1,36 @@
+.calendar {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.weekdays {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.days {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.day {
+  flex-basis: calc(100% / 7);
+  flex-grow: 0;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.prev-next-day {
+  color: grey;
+  flex-basis: calc(100% / 7);
+  flex-grow: 0;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}

@@ -37,12 +37,14 @@ const Pagination: React.FC<PaginationProps> = ({ date, setCurrentDate }) => {
   const [previousMonth, setPreviousMonth] = useState('');
   const [month, setMonth] = useState('');
   const [nextMonth, setNextMonth] = useState('');
+  const [year, setYear] = useState('');
 
   useEffect(() => {
     const [prev, current, next] = generateMonths(date);
     setPreviousMonth(prev);
     setMonth(current);
     setNextMonth(next);
+    setYear(date.getFullYear().toString());
   }, [date]);
 
   const handlePrev = () => {
@@ -66,12 +68,17 @@ const Pagination: React.FC<PaginationProps> = ({ date, setCurrentDate }) => {
   };
 
   return (
-    <div className="pagination">
-      <h3 onClick={handlePrev}>&lt;</h3>
-      <h3>{previousMonth}</h3>
-      <h3>{month}</h3>
-      <h3>{nextMonth}</h3>
-      <h3 onClick={handleNext}>&gt;</h3>
+    <div>
+      <h1>
+        {month} {year}
+      </h1>
+      <div className="pagination">
+        <h3 onClick={handlePrev}>&lt;</h3>
+        <h3>{previousMonth}</h3>
+        <h3>{month}</h3>
+        <h3>{nextMonth}</h3>
+        <h3 onClick={handleNext}>&gt;</h3>
+      </div>
     </div>
   );
 };
